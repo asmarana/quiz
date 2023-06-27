@@ -6,6 +6,8 @@ import (
 	"os"
 )
 
+// var wg sync.WaitGroup
+
 type Problem struct {
 	question string
 	solution string
@@ -37,6 +39,7 @@ func CreateProblemsList(records [][]string) (QuestionsList []string, AnswersList
 }
 
 func ReadFile() (questions []string, answers []string) {
+	// defer wg.Done()
 	file, error := os.Open("csv/problems.csv")
 
 	if error != nil {
